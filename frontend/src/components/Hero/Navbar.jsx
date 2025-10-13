@@ -64,11 +64,11 @@ const Navbar = () => {
 
               {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-6">
-             <Link to="/" className="text-[14px] text-black hover:text-black transition-colors duration-200">Home</Link>
-             <Link to="/about" className="text-[14px] text-black hover:text-black transition-colors duration-200">About</Link>
-             <Link to="/services" className="text-[14px] text-black hover:text-black transition-colors duration-200">Services</Link>
-             <Link to="/blogs" className="text-[14px] text-black hover:text-black transition-colors duration-200">Blogs</Link>
-             <Link to="/contact" className="text-[14px] text-black  hover:text-black transition-colors duration-200">Contact</Link>
+             <Link to="/" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">Home</Link>
+             <Link to="/about" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">About</Link>
+             <Link to="/services" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Services</Link>
+             <Link to="/blogs" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Blogs</Link>
+             <Link to="/contact" className="text-[14px] text-black  hover:text-black transition-colors hover:scale-105 duration-200">Contact</Link>
            </div>
 
 
