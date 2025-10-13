@@ -1,11 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 export default {
-  content: [
-    "./index.html",          // main HTML
-    "./src/**/*.{js,ts,jsx,tsx}" // all JS/TS/React files in src
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          yellow: "#FFC107",  
+        },
+        fontFamily: {
+        quicksand: ["Quicksand", "sans-serif"],
+        bricolage: ['"Bricolage Grotesque"', "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
+      },
+      },
+    },
   },
   plugins: [],
-}
+};
