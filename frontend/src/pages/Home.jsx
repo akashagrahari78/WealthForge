@@ -4,7 +4,6 @@ import HeroSection from "../components/Hero/HeroSections.jsx";
 import StatsSection from "../components/Stats/StatsSection.jsx";
 import ServicesSection from "../components/Services/ServicesSection.jsx";
 import WhyChooseSection from "../components/WhyChoose/WhyChooseSection.jsx";
-import AnimatedTimeline from "../components/WhyChoose/AnimatedTimeLine.jsx";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <StatsSection />
       <ServicesSection />
       <WhyChooseSection />
-      {/* <AnimatedTimeline/> */}
     </>
   );
 };
