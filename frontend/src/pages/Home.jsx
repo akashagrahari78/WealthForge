@@ -4,8 +4,10 @@ import HeroSection from "../components/Hero/HeroSections.jsx";
 import StatsSection from "../components/Stats/StatsSection.jsx";
 import ServicesSection from "../components/Services/ServicesSection.jsx";
 import WhyChooseSection from "../components/WhyChoose/WhyChooseSection.jsx";
-import TestimonialsSlider from "../components/Testimonials/TestimonialsSlider.jsx";
 import TestimonialsSection from "../components/Testimonials/TestimonialsSection.jsx";
+import FAQSection from "../components/FAQ/FAQSection.jsx";
+import Footer from "../components/Footer/Footer";
+import FAQSectionPro from "../components/FAQ/FAQSectionPro.jsx";
 
 const Home = () => {
   return (
@@ -15,10 +17,14 @@ const Home = () => {
       <StatsSection />
       <ServicesSection />
       <WhyChooseSection />
-      {/* <TestimonialsSlider /> */}
       <TestimonialsSection />
+      {/* // White background to black FAQ for contrast: */}
+      {/* <FAQSection inverted={true} singleOpen={true} /> */}
 
-      
+      {/* // If you prefer staying white-on-white: */}
+      <FAQSection inverted={false} singleOpen={true} />
+      {/* <FAQSectionPro inverted={false} /> */}
+      <Footer/>
 
     </>
   );
