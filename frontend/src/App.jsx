@@ -9,6 +9,7 @@ import ContactPage from "./pages/Contact";
 
 
 import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
  
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element = {<Home/>} />
+        <Route path="/about" element = {<About/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/contact" element={<ContactPage/>} />

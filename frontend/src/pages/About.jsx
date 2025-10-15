@@ -1,9 +1,12 @@
-import React from 'react'
+import AboutHero from "../components/About/AboutHero";
+import AboutHeroV2 from "../components/About/AboutHeroV2";
 
-const About = () => {
+export default function About() {
   return (
-    <div>About</div>
-  )
+    <>
+      {/* <AboutHero /> */}
+        <AboutHeroV2/>
+      {/* other about sections */}
+    </>
+  );
 }
-
-export default About
