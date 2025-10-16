@@ -6,6 +6,8 @@ import ContactInfoCard from "../components/contact/ContactInfoCard";
 import BookCallHeader from "../components/contact/BookCallHeader";
 import BookCallFormCard from "../components/contact/BookCallFormCard";
 import BookCallTipsCard from "../components/contact/BookCallTipsCard";
+import Navbar from "../components/Hero/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -56,6 +58,8 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+     <Navbar/>
     <main className="min-h-screen bg-white text-black">
       {/* Contact Section */}
       <section className="mx-auto w-[92%] md:w-[86%] max-w-6xl pt-20 pb-10">
@@ -103,5 +107,7 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+    <Footer/>
+    </>
   );
 }
