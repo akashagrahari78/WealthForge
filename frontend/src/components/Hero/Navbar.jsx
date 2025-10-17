@@ -67,7 +67,7 @@ const Navbar = () => {
              <Link to="/" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">Home</Link>
              <Link to="/about" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">About</Link>
              <Link to="/services" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Services</Link>
-             <Link to="/blogs" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Blogs</Link>
+             <Link to="/blog" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Blogs</Link>
              <Link to="/contact" className="text-[14px] text-black  hover:text-black transition-colors hover:scale-105 duration-200">Contact</Link>
            </div>
 
@@ -108,7 +108,7 @@ const Navbar = () => {
               <Link to="/" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Home</Link>
               <Link to="/about" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>About</Link>
               <Link to="/services" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Services</Link>
-              <Link to="/blogs" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Blogs</Link>
+              <Link to="/blog" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Blogs</Link>
               <Link to="/contact" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Contact</Link>
               <div className="flex gap-2 p-3">
                 <Link to="/book" onClick={() => setOpen(false)} className="flex-1 inline-flex items-center justify-center h-9 rounded-full bg-black text-white text-sm">Book a call</Link>
