@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import bgImage from "../../assets/heroBg.png"; // if you switch to inline bg
+import bgImage from "../../assets/heroBg.png"; // if you switch to inline bg
 
 const HeroSection = () => {
   return (
