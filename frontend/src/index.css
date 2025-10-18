@@ -12,3 +12,15 @@ body{
    /* background-color: black; */
    color: white;
 }
+
+/* In src/index.css */
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
