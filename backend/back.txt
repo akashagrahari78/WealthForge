@@ -1,0 +1,5 @@
+1-> google firebase ingration
+2 -> login and singup of user
+3 -> contact page for user
+4 -> Book call(button) -> set the routes
+//complete by 19 -10-25  

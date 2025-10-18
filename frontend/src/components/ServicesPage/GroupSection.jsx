@@ -12,7 +12,7 @@ export const GroupSection = ({ g }) => (
           {g.heading}
         </motion.h3>
 
-        <div className="mt-10 md:mt-14 space-y-10 md:space-y-14">
+        <div className="mt-10 md:mt-14 space-y-20 md:space-y-44">
           {g.services.map((s, i) => (
             <ServiceBlock key={`${g.heading}-${s.title}`} s={s} index={i} />
           ))}
