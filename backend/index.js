@@ -1,7 +1,7 @@
 // Import required modules
 const express = require('express');
 const cors = require('cors');  
-
+const connectDb = require("./config/mongodb.js")
 require("dotenv").config();
 
 
@@ -9,6 +9,10 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+connectDb().catch(err => {
+  console.error("MongoDB connection error:", err);
+  process.exit(1);
+});
 
 // middleware
 app.use(express.json());
