@@ -4,10 +4,13 @@ const cors = require('cors');
 const connectDb = require("./config/mongodb.js")
 require("dotenv").config();
 
+const userRouter = require("./routes/userRoute.js");
+
+
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 connectDb().catch(err => {
   console.error("MongoDB connection error:", err);
@@ -23,12 +26,13 @@ app.use(cors({
 }));
 
 
-// routes
-app.get('/', (req, res) => {
-  res.send('Server is running...');
-});
+//ROUTES
+app.use("/api/user", userRouter)  // for login , signup , contact page, 
 
-
+ 
+// app.get('/', (req, res) => {
+//   res.send('Server is running...');
+// });
 
 
 app.listen(PORT, () => {
