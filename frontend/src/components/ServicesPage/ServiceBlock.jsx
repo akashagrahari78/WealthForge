@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion"; 
 import { item } from "./motionVariants";
+// import services1 from '../../assets/services1.svg'
+
 
 export const ServiceBlock = ({ s, index }) => (
    <motion.div
@@ -14,6 +16,7 @@ export const ServiceBlock = ({ s, index }) => (
     <div className="flex-1 flex items-center justify-center">
       
       <motion.img
+        src= {s.img}
         alt={`${s.title} vector illustration`}
         className="w-[90%] max-w-xs md:max-w-sm"
          animate={{ y: [0, -8, 0] }}  

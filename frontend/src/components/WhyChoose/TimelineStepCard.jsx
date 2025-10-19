@@ -25,7 +25,7 @@ const TimelineStepCard = ({ step, index, total }) => {
           </svg>
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-black">{step.title}</h3>
+          <h3 className="font-quicksand text-lg md:text-xl font-semibold text-black">{step.title}</h3>
           <p className="mt-1 text-sm md:text-base text-black/70">{step.desc}</p>
         </div>
       </div>

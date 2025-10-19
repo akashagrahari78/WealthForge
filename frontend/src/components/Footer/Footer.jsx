@@ -27,9 +27,9 @@ const Footer = () => {
             <div className="md:col-span-2 flex flex-wrap gap-3 md:justify-end">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium ring-1 ring-white/20 hover:bg-white/90 transition"
+                className="inline-flex font-bricolage items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium ring-1 ring-white/20 hover:bg-white/90 transition"
               >
-                Book a Consultation
+                Book a Call 
               </Link>
               <a
                 href="tel:+916377662757"

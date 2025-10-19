@@ -31,7 +31,7 @@ const FoundersStory = () => {
         {/* Heading */}
         <motion.div variants={item} className="mb-8 md:mb-12 text-center">
           <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60">Founder’s story</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">Why this work matters</h2>
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold font-bricolage text-black">Why this work matters</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">

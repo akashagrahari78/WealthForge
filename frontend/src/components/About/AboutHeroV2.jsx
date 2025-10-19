@@ -39,7 +39,7 @@ const AboutHeroV2 = () => {
 
             <motion.h1
               variants={item}
-              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-black"
+              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold font-bricolage leading-tight text-black"
             >
               Building Financial Confidence, One Client at a Time
             </motion.h1>

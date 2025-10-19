@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { t } from "./ServicesData";
 import { container, item } from "./motionVariants";
+import servicesHero from '../../assets/servicesHero.svg'
 
 export const ServicesHero = ({ lang }) => {
   const translations = t[lang] || t.en;
@@ -38,11 +39,17 @@ export const ServicesHero = ({ lang }) => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="flex-1 flex items-center justify-center"
       >
-        <img
+{/*         <img
           src="https://undraw.co/api/illustrations/undraw_investment_data_re_sh9x.svg"
           alt="Financial advisor illustration"
           className="w-[90%] max-w-xs md:max-w-md drop-shadow-xl animate-float"
-        />
+        /> */}
+        <img 
+        src= {servicesHero}
+        alt="finance service illustration"
+        className="w-[90%] max-w-xs md:max-w-md drop-shadow-xl animate-float"
+
+        />
       </motion.div>
     </section>
   );

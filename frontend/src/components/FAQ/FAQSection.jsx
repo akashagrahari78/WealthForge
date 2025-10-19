@@ -34,11 +34,11 @@ const FAQSection = ({ inverted = false, singleOpen = true }) => {
             FAQ
           </p>
           <h2
-            className={`mt-2 text-3xl md:text-4xl font-semibold ${headingText}`}
+            className={`mt-2 text-3xl md:text-4xl font-semibold font-bricolage ${headingText}`}
           >
             Frequently asked questions
           </h2>
-          <p className={`mt-3 text-sm md:text-base ${headingMuted}`}>
+          <p className={`mt-3 text-sm md:text-base ${headingMuted} font-quicksand`}>
             Answers to common questions about pricing, process, and support.
           </p>
         </div>

@@ -53,7 +53,7 @@ const ServiceCard = ({
       className="relative overflow-hidden group rounded-2xl border border-black/10 bg-white p-5 md:p-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.10)] transition-shadow"
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-black">{title}</h3>
+        <h3 className="text-lg font-quicksand font-semibold text-black">{title}</h3>
         {badge && <Badge tone={badgeTone}>{badge}</Badge>}
       </div>
 

@@ -24,7 +24,7 @@ const ServicesHeader = () => (
     </div>
 
     {/* Headline */}
-    <h2 className="mt-3 font-bricolage text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-black">
+    <h2 className="mt-3 font-bricolage text-3xl md:text-4xl lg:text-5xl font-normal leading-tight text-black">
       Services tailored to your goals
     </h2>
 

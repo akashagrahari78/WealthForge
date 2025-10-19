@@ -30,7 +30,7 @@ const Card = ({ title, subtitle, desc, icon, accent }) => (
           {icon}
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-black">{title}</h3>
+          <h3 className="text-lg md:text-xl font-semibold font-quicksand text-black">{title}</h3>
           <p className="text-sm text-black/60">{subtitle}</p>
         </div>
       </div>
@@ -54,8 +54,8 @@ const MissionVision = () => {
         {/* Header */}
         <motion.div variants={item} className="mb-8 md:mb-12 text-center">
           <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/70">Our purpose</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">Mission & Vision</h2>
-          <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto">
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold font-bricolage text-black">Mission & Vision</h2>
+          <p className="mt-3 font-quicksand text-sm md:text-base text-black/70 max-w-2xl mx-auto">
             Clarity today, confidence tomorrow—grounded in disciplined planning and transparent advice.
           </p>
         </motion.div>

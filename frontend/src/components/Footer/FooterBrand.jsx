@@ -5,7 +5,7 @@ import SocialIcon from "./SocialIcon";
 
 const FooterBrand = () => (
   <motion.div variants={item} className="md:col-span-4">
-    <h2 className="text-3xl font-serif italic">Services</h2>
+    <h2 className="text-3xl font-serif italic">Pragya Financial Services</h2>
     <p className="mt-4 text-sm text-white/70 max-w-sm">
       Professional care, trusted advice, and a seamless experience across our services.
     </p>

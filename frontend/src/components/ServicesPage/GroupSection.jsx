@@ -6,7 +6,7 @@ import { container, item } from "./motionVariants";
 
 export const GroupSection = ({ g }) => (
   <section className="relative z-10" style={{ backgroundColor: g.bg }}>
-    <div className="mx-auto max-w-5xl w-[92%] py-14 md:py-20">
+    <div className="mx-auto max-w-5xl w-[92%] py-14 md:py-10">
       <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={container}>
         <motion.h3 variants={item} className="text-center text-2xl md:text-3xl font-semibold text-black">
           {g.heading}

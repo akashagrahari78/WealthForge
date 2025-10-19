@@ -1,5 +1,11 @@
 // src/components/Services/ServicesData.js
 
+import services1 from '../../assets/services1.svg';
+import mutualFunds from '../../assets/mutualFunds.svg';
+import sip from '../../assets/sip.svg';
+import bonds from '../../assets/bonds.svg';
+
+
 // Translation data
 export const t = {
   en: {
@@ -24,10 +30,10 @@ export const groups = [
     bg: "white",
     heading: "Grow Your Wealth Strategically",
     services: [
-      { title: "Investment Planning", desc: "Build a balanced, goal-aligned approach to long-term investing." },
-      { title: "Mutual Fund Advisory", desc: "Choose and track funds tailored to risk, horizon, and objectives." },
-      { title: "SIP Management", desc: "Automate disciplined investing with optimized SIP schedules." },
-      { title: "Bonds & Fixed Income", desc: "Stabilize portfolios with predictable income instruments." },
+      { title: "Investment Planning", desc: "Build a balanced, goal-aligned approach to long-term investing.",img : services1 },
+      { title: "Mutual Fund Advisory", desc: "Choose and track funds tailored to risk, horizon, and objectives.",img : mutualFunds },
+      { title: "SIP Management", desc: "Automate disciplined investing with optimized SIP schedules.",img : sip },
+      { title: "Bonds & Fixed Income", desc: "Stabilize portfolios with predictable income instruments.",img :  bonds },
     ],
   },
   {
