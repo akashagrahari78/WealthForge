@@ -1,1 +1,5 @@
 grid background -> Blog page(code)
+hero page vector image ->  top-left = Emergency fund, Risk profilling
+                           top -right = Asset allocation 
+                           bottom -right = yearly rebalancing
+                           

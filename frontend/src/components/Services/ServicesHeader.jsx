@@ -29,7 +29,7 @@ const ServicesHeader = () => (
     </h2>
 
     {/* Subtext */}
-    <p className="mt-3 text-base md:text-lg text-black/70 max-w-2xl">
+    <p className="mt-3 text-base md:text-lg font-quicksand text-black/70 max-w-2xl">
       Simple, transparent plans for wealth creation, protection, and tax efficiency.
     </p>
 

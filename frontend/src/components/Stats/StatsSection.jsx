@@ -4,7 +4,7 @@ import Counter from "./Counter";
 
 const StatsSection = () => {
   return (
-    <section className="bg-white text-gray-800 py-16">
+<section className="relative z-10 bg-white text-gray-800 py-16 mt-16 md:mt-24 lg:mt-32">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
         <StatItem subtitle="Assets Under Management">
           <Counter to={50} prefix="₹" suffix=" Cr+" duration={1.4} />
