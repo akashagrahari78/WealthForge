@@ -15,7 +15,14 @@ we receive your message after the user submit your contact form
 
 contact form ->
 Method 1: save data in db and send email to the team with the message
-Method 2 : use sheetDb.io
+Method 2 : use sheetDb.io(currently using)
+Method 3 :
+-> Build a small dashboard (React + Node.js API) for finance:
+-> List all contacts/bookings.
+-> Include “Reply” button that sends email directly.
+-> Optional: export to CSV if needed.
+-> Optionally, mirror the data to Google Sheets for reporting/sharing.
+
 
 integrate calendy  in (Book a free consultation Call)
 

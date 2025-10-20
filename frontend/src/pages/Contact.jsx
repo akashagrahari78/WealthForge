@@ -46,29 +46,45 @@ export default function ContactPage() {
     setBookingData((d) => ({ ...d, [name]: value }));
   };
 
- 
+  const submitContact = async (e) => {
+    e.preventDefault();
+    try {
+      // 1️⃣ Save to your backend database
+      const dbResponse = await axios.post(
+        "http://localhost:3000/api/user/contact",
+        contactData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-const submitContact = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post(
-      "http://localhost:3000/api/user/contact",
-      contactData,
+      // 2️⃣ Also save to Google Sheets via NoCodeAPI
+    await fetch("https://sheetdb.io/api/v1/9qi165ws9my8e", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    data: [
       {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+      name: contactData.name,
+      Email: contactData.email,
+      phone: `'${contactData.phone}`, // single quote forces text
+      message: contactData.message,
+    },
+    ],
+  }),
+});
 
-    toast.success(response.data.message);
-    setContactData({ name: "", email: "", phone: "", message: "" });
-  } catch (error) {
-    console.error(error);
-    toast.error(error.response?.data?.message || "Something went wrong!");
-  }
-};
 
+
+      toast.success(dbResponse.data.message || "Message sent successfully!");
+      setContactData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      toast.error(error.response?.data?.message || "Something went wrong!");
+    }
+  };
 
   const submitBooking = async (e) => {
     e.preventDefault();
@@ -79,55 +95,55 @@ const submitContact = async (e) => {
 
   return (
     <>
-     <Navbar/>
-    <main className="min-h-screen bg-white text-black">
-      {/* Contact Section */}
-      <section className="mx-auto w-[92%] md:w-[86%] max-w-6xl pt-20 pb-10">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stagger}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-8"
-        >
-          <ContactHeader variants={fadeUp} />
-
-          <ContactFormCard
-            variants={fadeUp}
-            data={contactData}
-            onChange={onChangeContact}
-            onSubmit={submitContact}
-          />
-
-          <ContactInfoCard variants={fadeUp} />
-        </motion.div>
-      </section>
-
-      {/* Book a Call Section */}
-      <section className="bg-gradient-to-b from-white to-[#f6f7fb] py-14">
-        <div className="mx-auto w-[92%] md:w-[86%] max-w-6xl">
+      <Navbar />
+      <main className="min-h-screen bg-white text-black">
+        {/* Contact Section */}
+        <section className="mx-auto w-[92%] md:w-[86%] max-w-6xl pt-20 pb-10">
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={stagger}
             className="grid grid-cols-1 lg:grid-cols-5 gap-8"
           >
-            <BookCallHeader variants={fadeUp} />
+            <ContactHeader variants={fadeUp} />
 
-            <BookCallFormCard
+            <ContactFormCard
               variants={fadeUp}
-              data={bookingData}
-              onChange={onChangeBooking}
-              onSubmit={submitBooking}
+              data={contactData}
+              onChange={onChangeContact}
+              onSubmit={submitContact}
             />
 
-            <BookCallTipsCard variants={fadeUp} />
+            <ContactInfoCard variants={fadeUp} />
           </motion.div>
-        </div>
-      </section>
-    </main>
-    <Footer/>
+        </section>
+
+        {/* Book a Call Section */}
+        <section className="bg-gradient-to-b from-white to-[#f6f7fb] py-14">
+          <div className="mx-auto w-[92%] md:w-[86%] max-w-6xl">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={stagger}
+              className="grid grid-cols-1 lg:grid-cols-5 gap-8"
+            >
+              <BookCallHeader variants={fadeUp} />
+
+              <BookCallFormCard
+                variants={fadeUp}
+                data={bookingData}
+                onChange={onChangeBooking}
+                onSubmit={submitBooking}
+              />
+
+              <BookCallTipsCard variants={fadeUp} />
+            </motion.div>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }
