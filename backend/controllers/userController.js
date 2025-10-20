@@ -1,5 +1,5 @@
 const userModel = require("../models/userModel.js");
-const contactMessageModel = require("../models/messageModel.js");
+const contactMessageModel = require("../models/contactMessageModel.js");
 // const { sendEmail } = require("../utils/sendEmail.js");
 
 const jwt = require("jsonwebtoken");
@@ -95,16 +95,21 @@ const userRegister = async (req, res) => {
 
 const handleUserContact = async (req, res) => {
   try {
-    const { name, email, message } = req.body;
-    const userId = req.user.userId;
+    const { name, email, message, phone } = req.body;
+    console.log("data is : ", name, email, message, phone)
+    // const userId = req.user.userId;
 
-    if (!userId) {
-      return res.status(400).json({ message: "user not found" });
+    // if (!userId) {
+    //   return res.status(400).json({ message: "user not found" });
+    // }
+    if (!name || !email || !message ||  !phone) {
+      return res.status(400).json({ message: "All fields are required." });
     }
-    const userContact = await messageModel.create({
+    const userContact = await contactMessageModel.create({
       name,
       email,
       message,
+      phone
     });
 
     res.status(201).json({

@@ -118,14 +118,14 @@ const JourneyMilestones = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 text-center">
+        {/* <div className="mt-10 text-center">
           <Link
             to="/about"
             className="inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-medium ring-1 ring-black/10 hover:bg-black/90"
           >
             Explore our approach
           </Link>
-        </div>
+        </div> */}
       </motion.div>
     </section>
   );

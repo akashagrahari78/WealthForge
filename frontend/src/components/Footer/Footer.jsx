@@ -31,12 +31,12 @@ const Footer = () => {
               >
                 Book a Call 
               </Link>
-              <a
+              {/* <a
                 href="tel:+916377662757"
                 className="inline-flex items-center justify-center rounded-full bg-yellow-400 text-black px-5 py-2.5 text-sm font-medium ring-1 ring-yellow-300/40 hover:bg-yellow-300 transition"
               >
                 Call Now
-              </a>
+              </a> */}
             </div>
           </motion.div>
 

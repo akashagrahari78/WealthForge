@@ -8,7 +8,7 @@ const userRouter = express.Router();
 userRouter.post("/register", userRegister)
 userRouter.post("/login", userLogin)
 userRouter.post("/email",authUser)
-userRouter.post("/contact",authUser, handleUserContact)
- 
+userRouter.post("/contact", handleUserContact) //this is currently in use 
+  
 
 module.exports = userRouter

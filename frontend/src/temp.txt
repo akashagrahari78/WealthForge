@@ -6,3 +6,17 @@ hero page vector image ->  top-left = Emergency fund, Risk profilling
 
 font -bricolage(heading main)
 quicksand, merriweather
+
+Book a call -> /contact(Book free consultation call)
+call now -> direct call 
+contact Us -> /contact
+we receive your message after the user submit your contact form
+
+
+contact form ->
+Method 1: save data in db and send email to the team with the message
+Method 2 : use sheetDb.io
+
+integrate calendy  in (Book a free consultation Call)
+
+Add Blog page to CMS

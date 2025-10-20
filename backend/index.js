@@ -4,9 +4,8 @@ const cors = require('cors');
 const connectDb = require("./config/mongodb.js")
 require("dotenv").config();
 
+
 const userRouter = require("./routes/userRoute.js");
-
-
 
 
 const app = express();

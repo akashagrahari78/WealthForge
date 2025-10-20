@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
+import { toast } from "react-toastify";
+
 import ContactHeader from "../components/contact/ContactHeader";
 import ContactFormCard from "../components/contact/ContactFormCard";
 import ContactInfoCard from "../components/contact/ContactInfoCard";
@@ -43,12 +46,29 @@ export default function ContactPage() {
     setBookingData((d) => ({ ...d, [name]: value }));
   };
 
-  const submitContact = async (e) => {
-    e.preventDefault();
-    // TODO: call API
-    // reset example
+ 
+
+const submitContact = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post(
+      "http://localhost:3000/api/user/contact",
+      contactData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    toast.success(response.data.message);
     setContactData({ name: "", email: "", phone: "", message: "" });
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error(error.response?.data?.message || "Something went wrong!");
+  }
+};
+
 
   const submitBooking = async (e) => {
     e.preventDefault();
