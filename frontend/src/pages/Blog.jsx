@@ -1,6 +1,7 @@
-import React from "react";
+// src/pages/Blog.jsx
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { POSTS } from "../components/BlogData/blogPosts.js";
+import client from "../client";
 
 // Hooks & Components
 import { useLang } from "../hooks/useLang.js";
@@ -10,11 +11,30 @@ import LanguageToggle from "../components/Blog/LanguageToggle.jsx";
 import FeaturedPost from "../components/Blog/FeaturedPost.jsx";
 import PostGrid from "../components/Blog/PostGrid.jsx";
 import CtaSection from "../components/Blog/CtaSection.jsx";
+import BlogSkeletonLoader from "../components/Blog/BlogSkeletonLoader.jsx";
 
-// Translation object
+
 const t = {
-  en: { headerTitle: "Insights & Articles", headerSub: "Simple, actionable insights...", readMore: "Read more", byAkash: "By Akash, Founder & Advisor", ctaTitle: "Want personal financial guidance?", ctaSub: "Book a free consultation call...", bookCall: "Book a Call", featured: "Featured" },
-  hi: { headerTitle: "अंतर्दृष्टि और लेख", headerSub: "बेहतर वित्तीय निर्णयों के लिए...", readMore: "आगे पढ़ें", byAkash: "लेखक: आकाश, संस्थापक व सलाहकार", ctaTitle: "व्यक्तिगत वित्तीय मार्गदर्शन चाहते हैं?", ctaSub: "आज ही आकाश से मुफ्त परामर्श...", bookCall: "कॉल बुक करें", featured: "विशेष लेख" },
+  en: {
+    headerTitle: "Insights & Articles",
+    headerSub: "Simple, actionable insights...",
+    readMore: "Read more",
+    byAkash: "By Akash, Founder & Advisor",
+    ctaTitle: "Want personal financial guidance?",
+    ctaSub: "Book a free consultation call...",
+    bookCall: "Book a Call",
+    featured: "Featured",
+  },
+  hi: {
+    headerTitle: "अंतर्दृष्टि और लेख",
+    headerSub: "बेहतर वित्तीय निर्णयों के लिए...",
+    readMore: "आगे पढ़ें",
+    byAkash: "लेखक: आकाश, संस्थापक व सलाहकार",
+    ctaTitle: "व्यक्तिगत वित्तीय मार्गदर्शन चाहते हैं?",
+    ctaSub: "आज ही आकाश से मुफ्त परामर्श...",
+    bookCall: "कॉल बुक करें",
+    featured: "विशेष लेख",
+  },
 };
 
 const container = {
@@ -24,8 +44,33 @@ const container = {
 
 const Blog = () => {
   const { lang, setLang } = useLang();
-  const featured = POSTS[0];
-  const rest = POSTS.slice(1);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "post"] | order(coalesce(date, _createdAt) desc) [0..8]{
+  title,
+  summary,
+  category,
+  "slug": slug.current,
+  "date": coalesce(date, _createdAt),
+  mainImage{
+    asset->{
+      url,
+      metadata{ lqip }
+    }
+  },
+  "excerpt": pt::text(body)[0..180]
+}
+`
+      )
+      .then((data) => setPosts(data || []))
+      .catch(console.error);
+  }, []);
+
+  const featured = posts[0];
+  const rest = posts.slice(1);
 
   return (
     <>
@@ -52,17 +97,31 @@ const Blog = () => {
           className="mx-auto max-w-7xl w-[92%] md:w-[86%] py-10 md:py-12"
         >
           <div className="mb-4 text-sm text-black/60">{t[lang].featured}</div>
-          {/* for the single featured post */}
-          <FeaturedPost post={featured} t={t[lang]} lang={lang} />
 
-          {/* --------- for all the posts in the grid  format--------- */}
-          <div className="mt-12">
-            <PostGrid posts={rest} t={t[lang]} lang={lang} />
-          </div>
+          {/* Skeleton loader while fetching */}
+{posts.length === 0 ? (
+  <BlogSkeletonLoader />
+) : (
+  <>
+    {/* Single featured post */}
+    {featured && <FeaturedPost post={featured} t={t[lang]} lang={lang} />}
+
+    {/* All posts grid */}
+    <div className="mt-12">
+      <PostGrid posts={rest} t={t[lang]} lang={lang} />
+    </div>
+  </>
+)}
+
         </motion.div>
-        
-        {/* ------------- cta section--------------------- */}
-        <CtaSection title={t[lang].ctaTitle} subtitle={t[lang].ctaSub} buttonText={t[lang].bookCall} lang={lang} />
+
+        {/* CTA */}
+        <CtaSection
+          title={t[lang].ctaTitle}
+          subtitle={t[lang].ctaSub}
+          buttonText={t[lang].bookCall}
+          lang={lang}
+        />
       </main>
       <Footer />
     </>

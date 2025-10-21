@@ -54,4 +54,5 @@ Dashboard UI updates automatically
 
 
 integrate calendy  in (Book a free consultation Call)
-Add Blog page to CMS
+Add Blog page to CMS(Done )
+Add Toast for not filling field in the contact page 
