@@ -12,8 +12,9 @@ const ContactInfoCard = ({ variants }) => (
         <h3 className="text-sm font-semibold">Office</h3>
         <p className="mt-1 text-sm text-black/70">
           Pragya Financial Services
-          <br /> 2nd Floor, Business Park
-          <br /> Mumbai, Maharashtra 400001
+          <br /> By Pass Road, Lalganj
+          <br /> Raebareli, Uttar Pradesh
+
         </p>
       </div>
 
@@ -35,7 +36,7 @@ const ContactInfoCard = ({ variants }) => (
           href="mailto:hello@pragya-fin.com"
           className="mt-1 inline-block text-sm text-black hover:underline"
         >
-          hello@pragya-fin.com
+          pragyafinancialservices@gmail.com
         </a>
       </div>
 

@@ -46,7 +46,7 @@ const PromiseCard = ({ icon, title, text, glow = "rgba(0,0,0,0.10)" }) => {
           {icon}
         </div>
         <div>
-          <h3 className="text-base md:text-lg font-semibold text-black">{title}</h3>
+          <h3 className="text-base font-quicksand md:text-lg font-semibold text-black">{title}</h3>
           <p className="mt-1 text-sm md:text-base text-black/70 leading-relaxed">{text}</p>
         </div>
       </div>
@@ -66,8 +66,8 @@ const ClientPromise = () => {
       >
         {/* Header */}
         <motion.div variants={item} className="text-center mb-8 md:mb-12">
-          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60">Our client promise</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">Clarity, discipline, and care—always</h2>
+          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60 font-quicksand">Our client promise</p>
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black font-bricolage">Clarity, discipline, and care—always</h2>
           <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto">
             Every recommendation is made in your best interest and explained in plain language, with ongoing guidance you can count on through all market cycles [memory:3].
           </p>

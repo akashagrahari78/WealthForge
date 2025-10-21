@@ -5,8 +5,8 @@ import ContactInfo from "./ContactInfo";
 
 const PHONE = "+91-6377662757";
 const EMAIL = "enrichsalon@gmail.com";
-const ADDRESS = "Mahavir Nagar III, Kota";
-const HOURS = "Mon–Sat 9:00 AM – 10:00 PM";
+const ADDRESS = "By Pass Road Lalganj, Raebareli";
+const HOURS = "Mon–Sat 10:00 AM – 6:00 PM";
 
 const FooterContact = () => (
   <motion.div variants={item} className="md:col-span-4">

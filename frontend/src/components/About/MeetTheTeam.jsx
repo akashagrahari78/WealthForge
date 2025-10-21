@@ -148,9 +148,9 @@ const MeetTheTeam = () => {
       >
         {/* Header */}
         <motion.div variants={item} className="mb-8 md:mb-12 text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60">Team</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">Meet the team</h2>
-          <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60 font-quicksand">Team</p>
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black font-bricolage">Meet the team</h2>
+          <p className="mt-3 font-quicksand text-sm md:text-base text-black/70 max-w-2xl mx-auto">
             A small, focused team bringing clarity, care, and discipline to every client relationship.
           </p>
         </motion.div>

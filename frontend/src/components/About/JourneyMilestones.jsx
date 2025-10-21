@@ -43,7 +43,7 @@ const TimelineCard = ({ year, title, text }) => (
     className="rounded-xl bg-white ring-1 ring-black/10 p-4 md:p-5 shadow-[0_8px_24px_rgba(0,0,0,0.05)]"
   >
     <p className="text-xs md:text-sm uppercase tracking-wide text-black/60">{year}</p>
-    <h3 className="mt-1 text-base md:text-lg font-semibold text-black">{title}</h3>
+    <h3 className="mt-1 font-quicksand text-base md:text-lg font-semibold text-black">{title}</h3>
     <p className="mt-1.5 text-sm md:text-base text-black/70 leading-relaxed">{text}</p>
   </motion.div>
 );
@@ -71,9 +71,9 @@ const JourneyMilestones = () => {
       >
         {/* Header */}
         <motion.div variants={item} className="mb-8 md:mb-12 text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60">Journey</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">Milestones</h2>
-          <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base uppercase tracking-[0.18em] font-quicksand text-black/60">Journey</p>
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold font-bricolage text-black">Milestones</h2>
+          <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto font-quicksand">
             A steady, disciplined path—prioritizing client outcomes over speed.
           </p>
         </motion.div>

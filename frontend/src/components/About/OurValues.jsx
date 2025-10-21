@@ -46,7 +46,7 @@ const ValueCard = ({ title, desc, icon, glow = "rgba(0,0,0,0.10)" }) => {
           {icon}
         </div>
         <div>
-          <h3 className="text-base md:text-lg font-semibold text-black">{title}</h3>
+          <h3 className="text-base font-quicksand md:text-lg font-semibold text-black">{title}</h3>
           <p className="mt-1 text-sm md:text-base text-black/70 leading-relaxed">{desc}</p>
         </div>
       </div>
@@ -66,8 +66,8 @@ const OurValues = () => {
       >
         {/* Header */}
         <motion.div variants={item} className="mb-8 md:mb-12 text-center">
-          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60">Our values</p>
-          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black">What guides our decisions</h2>
+          <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/60 font-quicksand">Our values</p>
+          <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black font-bricolage">What guides our decisions</h2>
           <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl mx-auto">
             Principles that keep advice transparent, disciplined, and client‑first.
           </p>

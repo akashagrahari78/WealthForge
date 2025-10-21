@@ -30,7 +30,7 @@ export const ServiceBlock = ({ s, index }) => (
 
     {/* This is the text side */}
     <div className="flex-1">
-      <h4 className="text-lg md:text-xl font-semibold text-black">{s.title}</h4>
+      <h4 className="text-lg md:text-xl font-quicksand font-semibold text-black">{s.title}</h4>
       <p className="mt-2 text-sm md:text-base text-black/70">{s.desc}</p>
     </div>
   </motion.div>

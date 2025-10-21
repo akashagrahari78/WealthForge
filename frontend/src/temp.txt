@@ -24,6 +24,34 @@ Method 3 :
 -> Optionally, mirror the data to Google Sheets for reporting/sharing.
 
 
-integrate calendy  in (Book a free consultation Call)
+User Form (Website)
+        |
+        | 1️⃣ User submits form
+        v
+Backend API (Node.js/Express)
+        |
+        | 2️⃣ Save submission to MongoDB
+        |
+        | 3️⃣ Emit WebSocket event (new submission)
+        v
+MongoDB (Database)
+        ^
+        | Optional: store for persistence
+        |
+Dashboard (Finance Team)
+        |
+        | 4️⃣ WebSocket receives event
+        v
+UI Updates in Real-Time (new row appears)
+        |
+        | 5️⃣ Finance team can click "Reply"
+        v
+Backend API sends Email (NodeMailer/Resend/SendGrid)
+        |
+        | 6️⃣ Update MongoDB with "replied" status
+        v
+Dashboard UI updates automatically
 
+
+integrate calendy  in (Book a free consultation Call)
 Add Blog page to CMS

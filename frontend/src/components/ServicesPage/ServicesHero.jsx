@@ -17,10 +17,10 @@ export const ServicesHero = ({ lang }) => {
             {translations.heroTag}
           </span>
         </motion.div>
-        <motion.h1 variants={item} className="text-2xl md:text-4xl font-semibold text-black leading-tight">
+        <motion.h1 variants={item} className="text-2xl md:text-4xl font-semibold text-black font-bricolage leading-tight">
           {translations.heroTitle}
         </motion.h1>
-        <motion.p variants={item} className="mt-4 text-base md:text-lg text-black/70 max-w-lg">
+        <motion.p variants={item} className="mt-4 font-quicksand text-base md:text-lg text-black/70 max-w-lg">
           {translations.heroSub}
         </motion.p>
         <motion.div variants={item} className="mt-8 flex gap-3 flex-wrap">
