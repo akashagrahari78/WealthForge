@@ -12,6 +12,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ContactPage from "./pages/Contact";
 import Book from "./pages/Book.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
 
 //check for sanity
 // import Blog from './components/Blog.jsx'
@@ -28,8 +30,12 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/book" element={<Book />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
 
-        
+
+
+
         {/* this is working  */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

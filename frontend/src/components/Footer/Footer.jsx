@@ -26,8 +26,10 @@ const Footer = () => {
             </div>
             <div className="md:col-span-2 flex flex-wrap gap-3 md:justify-end">
               <Link
-                to="/contact"
-                className="inline-flex font-bricolage items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium ring-1 ring-white/20 hover:bg-white/90 transition"
+               to="/book"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="inline-flex font-bricolage items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium ring-1 ring-white/20 hover:bg-white/90 transition"
               >
                 Book a Call 
               </Link>

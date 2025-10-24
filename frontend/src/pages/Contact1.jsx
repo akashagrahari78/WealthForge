@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";  
 
 import ContactHeader from "../components/contact/ContactHeader";
 import ContactFormCard from "../components/contact/ContactFormCard";
 import ContactInfoCard from "../components/contact/ContactInfoCard";
 import BookCallHeader from "../components/contact/BookCallHeader";
- import BookCallTipsCard from "../components/contact/BookCallTipsCard";
+import BookCallFormCard from "../components/contact/BookCallFormCard";
+import BookCallTipsCard from "../components/contact/BookCallTipsCard";
 import Navbar from "../components/Hero/Navbar";
 import Footer from "../components/Footer/Footer";
 
@@ -28,14 +28,23 @@ export default function ContactPage() {
     message: "",
   });
 
-  // --- BOOKING STATE AND HANDLERS REMOVED ---
+  // Booking form state
+  const [bookingData, setBookingData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    datetime: "",
+  });
 
   const onChangeContact = (e) => {
     const { name, value } = e.target;
     setContactData((d) => ({ ...d, [name]: value }));
   };
 
-  // --- onChangeBooking REMOVED ---
+  const onChangeBooking = (e) => {
+    const { name, value } = e.target;
+    setBookingData((d) => ({ ...d, [name]: value }));
+  };
 
   const submitContact = async (e) => {
     e.preventDefault();
@@ -52,20 +61,22 @@ export default function ContactPage() {
       );
 
       // 2️⃣ Also save to Google Sheets via NoCodeAPI
-      await fetch("https://sheetdb.io/api/v1/9qi165ws9my8e", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          data: [
-            {
-              name: contactData.name,
-              Email: contactData.email,
-              phone: `'${contactData.phone}`, // single quote forces text
-              message: contactData.message,
-            },
-          ],
-        }),
-      });
+    await fetch("https://sheetdb.io/api/v1/9qi165ws9my8e", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    data: [
+      {
+      name: contactData.name,
+      Email: contactData.email,
+      phone: `'${contactData.phone}`, // single quote forces text
+      message: contactData.message,
+    },
+    ],
+  }),
+});
+
+
 
       toast.success(dbResponse.data.message || "Message sent successfully!");
       setContactData({ name: "", email: "", phone: "", message: "" });
@@ -75,7 +86,12 @@ export default function ContactPage() {
     }
   };
 
-  // --- submitBooking REMOVED ---
+  const submitBooking = async (e) => {
+    e.preventDefault();
+    // TODO: call API
+    // reset example
+    setBookingData({ name: "", email: "", phone: "", datetime: "" });
+  };
 
   return (
     <>
@@ -115,28 +131,12 @@ export default function ContactPage() {
             >
               <BookCallHeader variants={fadeUp} />
 
- 
-              <motion.div
+              <BookCallFormCard
                 variants={fadeUp}
-                 className="lg:col-span-3 bg-white p-8 rounded-lg shadow-lg flex flex-col items-start justify-center h-full"
-              >
-                <h3 className="text-2xl font-semibold mb-4 text-black">
-                  Ready to Talk?
-                </h3>
-                <p className="text-gray-600 mb-8">
-                  Use our automated calendar to instantly find a time that
-                  works for you. No more waiting for email replies.
-                </p>
-                <Link
-                  to="/book"
-                  className="inline-flex h-10 items-center justify-center rounded-full bg-black px-5 text-sm font-medium text-white ring-1 ring-black/10 transition-colors hover:bg-black/90"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule Your Free Call
-                </Link>
-              </motion.div>
-            
+                data={bookingData}
+                onChange={onChangeBooking}
+                onSubmit={submitBooking}
+              />
 
               <BookCallTipsCard variants={fadeUp} />
             </motion.div>
