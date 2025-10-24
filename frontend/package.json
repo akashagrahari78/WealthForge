@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@portabletext/react": "^4.0.3",
     "@sanity/client": "^7.12.0",
     "@sanity/image-url": "^1.2.0",

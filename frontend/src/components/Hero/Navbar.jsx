@@ -74,12 +74,15 @@ const Navbar = () => {
 
               {/* Right actions */}
               <div className="flex items-center gap-2">
-                <Link
-                  to="/book"
-                  className="hidden sm:inline-flex items-center justify-center h-8 px-3 rounded-full bg-white text-black text-[13px] font-medium ring-1 ring-black/10 shadow-[0_2px_0_rgba(0,0,0,0.12)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 active:translate-y-0  transition-all"
-                >
-                  Book a call
-                </Link>
+             <Link
+               to="/book"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hidden sm:inline-flex items-center justify-center h-8 px-3 rounded-full bg-white text-black text-[13px] font-medium ring-1 ring-black/10 shadow-[0_2px_0_rgba(0,0,0,0.12)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+              >
+                Book a call
+              </Link>
+
 
                 {/* <button
                   onClick={handleLogin}
