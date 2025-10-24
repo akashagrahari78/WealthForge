@@ -1,3 +1,5 @@
+// this  contact section is the one I have used initially when I have not used cal.com, so now I am using cal.com, so I don't need the info of the user seperately
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";

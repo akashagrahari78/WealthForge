@@ -8,36 +8,65 @@ const TimelineStepCard = ({ step, index, total }) => {
   return (
     <motion.div
       variants={item}
-      className="relative rounded-2xl border border-black/10 bg-white p-5 md:p-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+      className="
+        relative rounded-2xl border border-black/[0.08] bg-white
+        p-5 sm:p-6 shadow-[0_6px_20px_rgba(0,0,0,0.06)]
+        hover:shadow-[0_10px_28px_rgba(0,0,0,0.10)] transition-shadow
+      "
     >
-      {/* Connector line (mobile vertical) */}
+      {/* Mobile vertical connector */}
       {index !== total - 1 && (
-        <div className="md:hidden absolute left-6 top-[72px] bottom-[-12px] w-[2px] bg-black/10" />
+        <div className="md:hidden absolute left-8 top-[74px] bottom-[-14px] w-px bg-black/10" />
       )}
 
-      {/* Step icon + title: ROUND badges */}
-      <div className="flex items-start gap-3">
+      {/* Header: smaller circular badge + title + desc */}
+      <div className="flex items-start gap-3 sm:gap-4">
         <div
-          className={`inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full ring-1 ${step.iconBg}`}
+          className={`
+            relative shrink-0
+            inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center
+            rounded-full ring-1 ring-black/[0.06]
+            ${step.iconBg} text-black
+            shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]
+          `}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-[20px] w-[20px] md:h-[22px] md:w-[22px] text-current" viewBox="0 0 24 24" fill="currentColor">
+          {/* subtle glossy highlight */}
+          <span className="pointer-events-none absolute inset-0 rounded-full bg-white/0 [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.7),transparent_40%)]" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-[18px] w-[18px] sm:h-[19px] sm:w-[19px]"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
             {stepIcon(step.key)}
           </svg>
         </div>
+
         <div>
-          <h3 className="font-quicksand text-lg md:text-xl font-semibold text-black">{step.title}</h3>
-          <p className="mt-1 text-sm md:text-base text-black/70">{step.desc}</p>
+          <h3 className="font-quicksand text-lg sm:text-xl font-semibold text-black">
+            {step.title}
+          </h3>
+          <p className="mt-1 text-sm sm:text-base leading-relaxed text-black/70">
+            {step.desc}
+          </p>
         </div>
       </div>
 
-      {/* Horizontal connectors (desktop) */}
+      {/* Desktop connector: dot — line — dot */}
       <div className="hidden md:block">
         <div className="relative mt-6">
           <div className="flex items-center">
             <Dot />
-            {index !== total - 1 && <div className="mx-2 h-[2px] flex-1 bg-black/10" />}
+            {index !== total - 1 && (
+              <div className="mx-2 h-px flex-1 bg-black/10" />
+            )}
           </div>
         </div>
+      </div>
+
+      {/* Mobile bottom dot to match rhythm */}
+      <div className="md:hidden mt-5">
+        <Dot />
       </div>
     </motion.div>
   );
