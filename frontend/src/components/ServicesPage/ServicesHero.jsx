@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { t } from "./ServicesData";
 import { container, item } from "./motionVariants";
 import servicesHero from '../../assets/servicesHero.svg'
+import services_top from '../../assets/services_top.svg'
+
 
 export const ServicesHero = ({ lang }) => {
   const translations = t[lang] || t.en;
@@ -45,7 +47,7 @@ export const ServicesHero = ({ lang }) => {
           className="w-[90%] max-w-xs md:max-w-md drop-shadow-xl animate-float"
         /> */}
         <img 
-        src= {servicesHero}
+        src= {services_top}
         alt="finance service illustration"
         className="w-[90%] max-w-xs md:max-w-md drop-shadow-xl animate-float"
 

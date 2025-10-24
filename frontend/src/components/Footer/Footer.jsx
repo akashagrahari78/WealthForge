@@ -45,11 +45,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <FooterBrand />
             <div className="hidden md:block md:col-span-1" />
-            <FooterLinks />   {/* stays same but will use Link internally */}
+            <FooterLinks />   
             <FooterContact />
           </div>
 
-          <FooterBottom />   {/* updated to use Link */}
+          <FooterBottom />  
         </div>
       </motion.footer>
     </div>

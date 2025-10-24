@@ -4,8 +4,8 @@ import { faqs } from "./faq.data";
 import { Link } from "react-router-dom";
 
 const FAQSection = ({ inverted = false, singleOpen = true }) => {
-  const [openIndex, setOpenIndex] = React.useState(singleOpen ? 0 : -1);
-  const [openSet, setOpenSet] = React.useState(new Set([0])); // for multi-open if needed
+const [openIndex, setOpenIndex] = React.useState(-1);        // singleOpen mode: none open initially
+const [openSet, setOpenSet] = React.useState(() => new Set()); 
 
   const toggle = (i) => {
     if (singleOpen) {

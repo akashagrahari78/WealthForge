@@ -1,12 +1,15 @@
 // src/components/Services/ServicesData.js
 
 import services1 from "../../assets/services1.svg";
-import mutualFunds from "../../assets/mutualFunds.svg";
-import sip from "../../assets/sip.svg";
-import bonds from "../../assets/bonds.svg";
-import lifeInsurance from '../../assets/lifeInsurance.png'
-import insurance from '../../assets/insurance.png'
-import medicalInsurance from  '../../assets/medicalInsurance.png'
+import services2 from '../../assets/services2.svg'
+import services3 from '../../assets/services3.svg'
+import services4 from '../../assets/services4.svg'
+import services5 from '../../assets/services5.png'
+import services6 from '../../assets/services6.png'
+import services7 from '../../assets/services7.svg'
+import services9 from '../../assets/services9.svg'
+
+// import insurance from '../../assets/insurance.png'
 // Translation data
 
 export const t = {
@@ -42,17 +45,17 @@ export const groups = [
       {
         title: "Mutual Fund Advisory",
         desc: "Choose and track funds tailored to your risk profile, investment horizon, and financial objectives. Receive insights on performance, diversification, and rebalancing to optimize your returns while minimizing risks.",
-        img: mutualFunds,
+        img: services2,
       },
       {
         title: "SIP Management",
         desc: "Automate disciplined investing with optimized SIP schedules to stay consistent and grow steadily. Monitor contributions, adjust amounts based on goals, and track performance to ensure your wealth-building plan remains on track.",
-        img: sip,
+        img: services3,
       },
       {
         title: "Bonds & Fixed Income",
         desc: "Stabilize your portfolio with predictable income instruments, balancing growth and safety. Explore bonds, debentures, and other fixed-income options that provide steady returns while minimizing volatility.",
-        img: bonds,
+        img: services4,
       },
     ],
   },
@@ -63,12 +66,12 @@ export const groups = [
       {
         title: "Life & Term Insurance",
         desc: "Safeguard your loved ones with reliable and affordable coverage designed for peace of mind. Plan for unforeseen events, secure financial stability, and ensure that your family's future is protected under all circumstances.",
-        img : insurance
+        img : services5
       },
       {
         title: "Health & Medical Insurance",
         desc: "Prepare for medical uncertainties with smart protection tailored to your family's needs. Cover hospitalization, critical illnesses, and routine healthcare expenses so that unexpected medical costs do not derail your financial goals.",
-        img: medicalInsurance
+        img: services6
       },
       {
         title: "Business / Group Insurance",
@@ -83,10 +86,12 @@ export const groups = [
       {
         title: "Tax & Wealth Management",
         desc: "Integrate taxes with investments efficiently to retain more gains and optimize returns. Plan for tax-saving opportunities, understand implications of investment decisions, and manage wealth holistically to maximize financial growth over time.",
+        img : services7
       },
       {
         title: "NRI / Business Financial Planning",
         desc: "Navigate cross-border, regulatory, and growth decisions with clarity and confidence. Manage international investments, compliance requirements, and business expansion strategies while ensuring financial stability and long-term success.",
+        img: services9
       },
     ],
     cta: { label: "Consult Now", href: "#consult" },

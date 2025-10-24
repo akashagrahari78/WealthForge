@@ -7,7 +7,7 @@ const FooterBrand = () => (
   <motion.div variants={item} className="md:col-span-4">
     <h2 className="text-3xl font-serif">Pragya Financial Services</h2>
     <p className="mt-4 text-sm text-white/70 max-w-sm">
-      Professional care, trusted advice, and a seamless experience across our services.
+      Trusted guidance for your money—simple, honest, long‑term.
     </p>
 
     <div className="mt-5 flex items-center gap-3">

@@ -7,7 +7,7 @@ import WhyChooseSection from "../components/WhyChoose/WhyChooseSection.jsx";
 import TestimonialsSection from "../components/Testimonials/TestimonialsSection.jsx";
 import FAQSection from "../components/FAQ/FAQSection.jsx";
 import Footer from "../components/Footer/Footer";
-import FAQSectionPro from "../components/FAQ/FAQSectionPro.jsx";
+// import FAQSectionPro from "../components/FAQ/FAQSectionPro.jsx";
 
 const Home = () => {
   return (

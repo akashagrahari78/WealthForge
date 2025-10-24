@@ -8,7 +8,6 @@ font -bricolage(heading main)
 quicksand, merriweather
 
 Book a call -> /contact(Book free consultation call)
-call now -> direct call 
 contact Us -> /contact
 we receive your message after the user submit your contact form
 
@@ -53,6 +52,13 @@ Backend API sends Email (NodeMailer/Resend/SendGrid)
 Dashboard UI updates automatically
 
 
-integrate calendy  in (Book a free consultation Call)
-Add Blog page to CMS(Done )
+integrate cal.com  in (Book a free consultation Call) (Done)
+Add Blog page to CMS(Done)
 Add Toast for not filling field in the contact page 
+
+
+25-10-18 Todo 
+-> map change to current location
+-> make individual pages for each service 
+-> make a moving strip of companines of our partners
+-> arn display with sebi images as finology
