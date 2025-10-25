@@ -33,7 +33,7 @@ const ContactInfoCard = ({ variants }) => (
       <div>
         <h3 className="text-sm font-semibold">Email</h3>
         <a
-          href="mailto:hello@pragya-fin.com"
+          href="mailto:pragyafinancialservices@gmail.com"
           className="mt-1 inline-block text-sm text-black hover:underline"
         >
           pragyafinancialservices@gmail.com
@@ -44,7 +44,7 @@ const ContactInfoCard = ({ variants }) => (
         <div className="overflow-hidden rounded-xl border border-black/10">
           <iframe
             title="Office Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160993329!2d72.7411!3d19.0822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c630b2a2!2sMumbai!5e0!3m2!1sen!2sin!4v0000000000000"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7162.136613217847!2d80.9665538!3d26.1619048!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399b82c727a05c59%3A0x1e16e29ed70ae018!2sPragya%20Financial%20Services!5e0!3m2!1sen!2sin!4v1761381238530!5m2!1sen!2sin"
             width="100%"
             height="180"
             loading="lazy"
