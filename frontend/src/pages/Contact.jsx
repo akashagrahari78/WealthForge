@@ -8,7 +8,7 @@ import ContactHeader from "../components/Contact/ContactHeader.jsx";
 import ContactFormCard from "../components/Contact/ContactFormCard.jsx";
 import ContactInfoCard from "../components/Contact/ContactInfoCard.jsx";
 import BookCallHeader from "../components/Contact/BookCallHeader.jsx";
- import BookCallTipsCard from "../components/contact/BookCallTipsCard.jsx";
+ import BookCallTipsCard from "../components/Contact/BookCallTipsCard.jsx";
 import Navbar from "../components/Hero/Navbar.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
