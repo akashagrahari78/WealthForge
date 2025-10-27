@@ -15,6 +15,7 @@ import Book from "./pages/Book.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import ServiceDetail from "./pages/ServiceDetail.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 //check for sanity
 // import Blog from './components/Blog.jsx'
@@ -42,10 +43,11 @@ const App = () => {
         {/* this is working  */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
-
+ 
         {/* for sanity.io check */}
         {/* <Route path="/blog" element = {<Blog/>} />
           <Route path="/blog/:slug" element = {<SinglePost/>} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
