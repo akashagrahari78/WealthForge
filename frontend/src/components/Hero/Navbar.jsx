@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/pragya_logo.jpeg";
-
-// Define navigation links as an array for easier mapping
+ 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -98,7 +97,7 @@ const Navbar = () => {
               >
                 <motion.div
                   animate={isOpen ? "open" : "closed"}
-                  className="relative h-4 w-4"
+                  className="relative h-4 w-4 transform -translate-x-1.5"
                 >
                   <motion.span
                     variants={{ closed: { y: 0, rotate: 0 }, open: { y: 4, rotate: 45 } }}

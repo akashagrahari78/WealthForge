@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { item } from "./motion.variants";
+import { Link } from "react-router-dom";
 
 const GuidanceLane = () => (
   <motion.div
@@ -13,12 +14,13 @@ const GuidanceLane = () => (
         Get a free 10‑minute assessment to find the right plan for you.
       </p>
     </div>
-    <a
-      href="/contact"
-      className="inline-flex items-center justify-center rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white ring-1 ring-black/10 hover:bg-black/90"
-    >
-      Book a Free Consultation
-    </a>
+    
+<Link
+  to="/book"
+  className="inline-flex items-center justify-center rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white ring-1 ring-black/10 hover:bg-black/90"
+>
+  Book a Free Consultation
+</Link>
   </motion.div>
 );
 
