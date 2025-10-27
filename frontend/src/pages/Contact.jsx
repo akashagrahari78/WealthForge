@@ -4,13 +4,13 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";  
 
-import ContactHeader from "../components/contact/ContactHeader";
-import ContactFormCard from "../components/contact/ContactFormCard";
-import ContactInfoCard from "../components/contact/ContactInfoCard";
-import BookCallHeader from "../components/contact/BookCallHeader";
- import BookCallTipsCard from "../components/contact/BookCallTipsCard";
-import Navbar from "../components/Hero/Navbar";
-import Footer from "../components/Footer/Footer";
+import ContactHeader from "../components/contact/ContactHeader.jsx";
+import ContactFormCard from "../components/contact/ContactFormCard.jsx";
+import ContactInfoCard from "../components/contact/ContactInfoCard.jsx";
+import BookCallHeader from "../components/contact/BookCallHeader.jsx";
+ import BookCallTipsCard from "../components/contact/BookCallTipsCard.jsx";
+import Navbar from "../components/Hero/Navbar.jsx";
+import Footer from "../components/Footer/Footer.jsx";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },

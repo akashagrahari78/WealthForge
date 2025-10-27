@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Badge from "./Badge";
 import { item } from "./motion.variants";
+import { Link } from "react-router-dom";
 
 const colorMap = {
   yellow: "rgba(251, 191, 36, 0.15)",
@@ -17,7 +18,7 @@ const ServiceCard = ({
   badge,
   badgeTone = "yellow",
   ctaText = "Book a call",
-  ctaTo = "/contact",
+  slug, 
 }) => {
   const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -69,12 +70,12 @@ const ServiceCard = ({
       </ul>
 
       <div className="mt-5">
-        <a
-          href={ctaTo}
+        <Link
+          to={`/services/${slug}`}
           className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white ring-1 ring-black/10 transition-colors hover:bg-black/90"
         >
           {ctaText}
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
