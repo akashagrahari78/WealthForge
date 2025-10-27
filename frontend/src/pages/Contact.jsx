@@ -4,10 +4,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";  
 
-import ContactHeader from "../components/contact/ContactHeader.jsx";
-import ContactFormCard from "../components/contact/ContactFormCard.jsx";
-import ContactInfoCard from "../components/contact/ContactInfoCard.jsx";
-import BookCallHeader from "../components/contact/BookCallHeader.jsx";
+import ContactHeader from "../components/Contact/ContactHeader.jsx";
+import ContactFormCard from "../components/Contact/ContactFormCard.jsx";
+import ContactInfoCard from "../components/Contact/ContactInfoCard.jsx";
+import BookCallHeader from "../components/Contact/BookCallHeader.jsx";
  import BookCallTipsCard from "../components/contact/BookCallTipsCard.jsx";
 import Navbar from "../components/Hero/Navbar.jsx";
 import Footer from "../components/Footer/Footer.jsx";
