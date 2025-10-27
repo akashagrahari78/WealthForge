@@ -65,7 +65,7 @@ Add Toast for not filling field in the contact page
 
 More Todos : 
 -> floating chatbot, whatsapp
--> Add planning tools(retirmiment, sip, luumpus, planners, calculators )
+-> Add planning tools(retirmiment, sip, luumpus, planners, calculators)
 -> Newsletter
 -> smart goal planners
  

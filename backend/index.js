@@ -20,7 +20,7 @@ connectDb().catch(err => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: 'http://localhost:5173' || 'https://wealth-forge-p2c6.vercel.app/', 
   credentials: true
 }));
 

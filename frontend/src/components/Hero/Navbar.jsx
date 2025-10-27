@@ -1,134 +1,201 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-// import { assets } from "../assets/assets";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/pragya_logo.jpeg";
 
+// Define navigation links as an array for easier mapping
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/blog", label: "Blogs" },
+  { href: "/contact", label: "Contact" },
+];
+
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [elevated, setElevated] = useState(false);
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isElevated, setIsElevated] = useState(false);
+  
+  // Scroll effect for navbar elevation
+  useEffect(() => {
+    const onScroll = () => {
+      setIsElevated(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  useEffect(() => {
-    const onScroll = () => setElevated(window.scrollY > 6);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
-  const handleLogout = async () => {
-    // try {
-    //   localStorage.removeItem("token");
-    //   toast.success("Logout successful");
-    //   navigate("/");
-    // } catch (err) {
-    //   console.error("Logout failed", err);
-    //   localStorage.removeItem("token");
-    //   navigate("/");
-    // }
-  };
-  const handleLogin = () => {
-  navigate("/login");
-};
+  return (
+    <>
+      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-40 w-[92%] md:w-[88%] max-w-6xl">
+        <nav
+          className={`
+            rounded-full border backdrop-blur-lg
+            ${isElevated
+              ? "bg-white/80 shadow-lg border-white/20"
+              : "bg-white/50 shadow-md border-white/40"
+            }
+            transition-all duration-300
+          `}
+        >
+          <div className="mx-auto flex h-12 items-center justify-between px-3 sm:px-4">
+            {/* Logo and Brand Name */}
+            <Link to="/" className="flex items-center gap-2">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden ring-1 ring-black/5 shadow">
+                <img
+                  src={logo}
+                  alt="Pragya Financial Services Logo"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              {/* UPDATED: Always visible brand name */}
+              <span className="text-xs sm:text-sm tracking-tight text-black">
+                Pragya <span className="font-semibold">Financial Services</span>
+              </span>
+            </Link>
 
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="px-4 py-2 text-sm text-black/80 hover:text-black transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
 
-  return (
-    <>
-      {/* container centered and fixed */}
-      {/*  --------width adjust to 88 from 70  */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[70%]">
-        <nav
-          className={[
-            "rounded-full backdrop-blur-md border border-white/50",
-            "bg-white/35 shadow-[0_8px_24px_rgba(0,0,0,0.12)]",
-            elevated ? "shadow-[0_12px_28px_rgba(0,0,0,0.16)]" : ""
-          ].join(" ")}
-        >
-          <div className="mx-auto px-3 sm:px-4">
-            {/* height trimmed: 44px desktop, 40px mobile */}
-            {/* -------------adjust height of navbar --------- */}
-            <div className="flex h-11 sm:h-11 items-center justify-between">
-              
-              {/* --- 2. LOGO SECTION UPDATED --- */}
-              <Link to="/" className="flex items-center gap-2">
-                {/* Removed bg-yellow-400, added overflow-hidden */}
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg ring-1 ring-black/10 shadow overflow-hidden">
-                  {/* Replaced SVG with IMG tag */}
-                  <img 
-                    src={logo} 
-                    alt="Pragya Financial Services Logo" 
-                    className="h-full w-full object-cover" 
+            {/* Actions */}
+            <div className="flex items-center gap-2">
+              <Link
+                to="/book"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center justify-center h-8 px-4 rounded-full bg-black text-white text-[13px] font-medium ring-1 ring-black/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+              >
+                Book a call
+              </Link>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                aria-label="Toggle menu"
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 ring-1 ring-black/5"
+              >
+                <motion.div
+                  animate={isOpen ? "open" : "closed"}
+                  className="relative h-4 w-4"
+                >
+                  <motion.span
+                    variants={{ closed: { y: 0, rotate: 0 }, open: { y: 4, rotate: 45 } }}
+                    className="absolute h-px w-full bg-black"
+                    style={{ top: "25%" }}
                   />
-                </span>
-                <span className="text-[13px] sm:text-sm tracking-tight text-black">
-                  Pragya <span className="font-semibold">Financial Services</span>
-                </span>
-              </Link>
-              {/* --- END OF LOGO UPDATE --- */}
+                  <motion.span
+                    variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }}
+                    className="absolute h-px w-full bg-black"
+                    style={{ top: "50%", transform: "translateY(-50%)" }}
+                  />
+                  <motion.span
+                    variants={{ closed: { y: 0, rotate: 0 }, open: { y: -4, rotate: -45 } }}
+                    className="absolute h-px w-full bg-black"
+                    style={{ bottom: "25%" }}
+                  />
+                </motion.div>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && <MobileMenu navLinks={navLinks} closeMenu={() => setIsOpen(false)} />}
+      </AnimatePresence>
 
-              {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-6">
-             <Link to="/" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">Home</Link>
-             <Link to="/about" className="text-[14px] text-black hover:text-black hover:scale-105  transition-colors duration-200">About</Link>
-             <Link to="/services" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Services</Link>
-             <Link to="/blog" className="text-[14px] text-black hover:text-black transition-colors hover:scale-105  duration-200">Blogs</Link>
-             <Link to="/contact" className="text-[14px] text-black  hover:text-black transition-colors hover:scale-105 duration-200">Contact</Link>
-           </div>
-
-
-              {/* Right actions */}
-              <div className="flex items-center gap-2">
-             <Link
-               to="/book"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="hidden sm:inline-flex items-center justify-center h-8 px-3 rounded-full bg-white text-black text-[13px] font-medium ring-1 ring-black/10 shadow-[0_2px_0_rgba(0,0,0,0.12)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all"
-        _B_       >
-                Book a call
-              </Link>
-
-
-                {/* <button
-                  onClick={handleLogin}
-                  className="hidden sm:inline-flex items-center justify-center h-8 px-3 rounded-full bg-black text-white text-[13px] font-medium ring-1 ring-black/10 hover:bg-white hover:text-black  transition"
-                >
-                  Login
-                </button> */}
-
-                {/* Mobile toggle */}
-                <button
-                  aria-label="Open menu"
-                  className="md:hidden inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/70 ring-1 ring-black/10 text-black"
-                  onClick={() => setOpen((v) => !v)}
-          _B_       >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
-  t         </div>
-          </div>
-
-          {/* Mobile menu */}
-          <div className={`md:hidden ${open ? "block" : "hidden"} px-3 pb-3`}>
-            <div className="mt-2 flex flex-col rounded-xl bg-white/75 backdrop-blur-md ring-1 ring-black/10 shadow-md overflow-hidden">
-              <Link to="/" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Home</Link>
-    t         <Link to="/about" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>About</Link>
-              <Link to="/services" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Services</Link>
-              <Link to="/blog" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Blogs</Link>
-              <Link to="/contact" className="px-4 py-2.5 text-black/90 hover:bg-black/5" onClick={() => setOpen(false)}>Contact</Link>
-              <div className="flex gap-2 p-3">
-      t         <Link to="/book" onClick={() => setOpen(false)} className="flex-1 inline-flex items-center justify-center h-9 rounded-full bg-black text-white text-sm">Book a call</Link>
-                {/* <button onClick={() => { setOpen(false); handleLogout(); }} className="flex-1 inline-flex items-center justify-center h-9 rounded-full bg-white text-black text-sm ring-1 ring-black/10">Logout</button> */}
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      {/* spacer for fixed header */}
-      <div className="h-16 sm:h-16" />
-    </>
-  );
+      {/* Spacer for fixed header */}
+      <div className="h-20" />
+    </>
+  );
 };
+
+// Separate component for the mobile menu overlay
+const MobileMenu = ({ navLinks, closeMenu }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2 }}
+    className="fixed inset-0 bg-white z-50 p-4"
+  >
+    {/* Menu Header */}
+    <div className="flex items-center justify-between">
+      <Link to="/" onClick={closeMenu} className="flex items-center gap-2">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden ring-1 ring-black/5 shadow">
+          <img
+            src={logo}
+            alt="Pragya Financial Services Logo"
+            className="h-full w-full object-cover"
+          />
+        </span>
+        <span className="text-sm tracking-tight text-black">
+          Pragya <span className="font-semibold">Financial Services</span>
+        </span>
+      </Link>
+      <button
+        aria-label="Close menu"
+        onClick={closeMenu}
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/5 ring-1 ring-black/10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    {/* Navigation Links & CTA */}
+    <div className="mt-8">
+      <nav className="flex flex-col gap-2">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            to={link.href}
+            onClick={closeMenu}
+            className="rounded-lg px-4 py-3 text-lg font-medium text-black/90 hover:bg-black/5"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+      
+      {/* UPDATED: "Book a call" button now appears after the links */}
+      <div className="mt-6">
+        <Link
+          to="/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+          className="flex w-full items-center justify-center rounded-xl bg-black py-3.5 text-base font-medium text-white"
+        >
+          Book a call
+        </Link>
+      </div>
+    </div>
+  </motion.div>
+);
 
 export default Navbar;
