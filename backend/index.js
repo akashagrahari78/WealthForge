@@ -15,6 +15,10 @@ connectDb().catch(err => {
   console.error("MongoDB connection error:", err);
   process.exit(1);
 });
+app.get('/',(req,res)=>{
+  console.log("here server is running")
+  res.send("server is running here")
+})
 
 // middleware
 app.use(express.json());

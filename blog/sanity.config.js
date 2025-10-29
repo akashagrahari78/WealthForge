@@ -7,8 +7,9 @@ export default defineConfig({
   name: 'default',
   title: 'Blog',
 
-  projectId: 'spyj1bcp',
-  dataset: 'production',
+  // UPDATED: Read from environment variables
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: import.meta.env.VITE_SANITY_DATASET,
 
   plugins: [structureTool(), visionTool()],
 

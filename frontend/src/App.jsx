@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScroolToTop.jsx";
+import { Toaster } from "sonner";
 
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <>
       <ScrollToTop />
+      <Toaster position="top-right" theme="dark" richColors />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -37,13 +39,10 @@ const App = () => {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
 
-
-
-
         {/* this is working  */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
- 
+
         {/* for sanity.io check */}
         {/* <Route path="/blog" element = {<Blog/>} />
           <Route path="/blog/:slug" element = {<SinglePost/>} /> */}

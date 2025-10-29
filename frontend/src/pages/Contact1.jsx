@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
-import ContactHeader from "../components/contact/ContactHeader";
-import ContactFormCard from "../components/contact/ContactFormCard";
-import ContactInfoCard from "../components/contact/ContactInfoCard";
-import BookCallHeader from "../components/contact/BookCallHeader";
-import BookCallFormCard from "../components/contact/BookCallFormCard";
-import BookCallTipsCard from "../components/contact/BookCallTipsCard";
+import ContactHeader from "../components/Contact/ContactHeader";
+import ContactFormCard from "../components/Contact/ContactFormCard";
+import ContactInfoCard from "../components/Contact/ContactInfoCard";
+import BookCallHeader from "../components/Contact/BookCallHeader";
+import BookCallFormCard from "../components/Contact/BookCallFormCard";
+import BookCallTipsCard from "../components/Contact/BookCallTipsCard";
 import Navbar from "../components/Hero/Navbar";
 import Footer from "../components/Footer/Footer";
 

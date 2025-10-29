@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import { Link } from "react-router-dom";  
-
+import api from "../hooks/api.js";
 import ContactHeader from "../components/Contact/ContactHeader.jsx";
 import ContactFormCard from "../components/Contact/ContactFormCard.jsx";
 import ContactInfoCard from "../components/Contact/ContactInfoCard.jsx";
@@ -41,8 +41,8 @@ export default function ContactPage() {
     e.preventDefault();
     try {
       // 1️⃣ Save to your backend database
-      const dbResponse = await axios.post(
-        "http://localhost:3000/api/user/contact",
+      const dbResponse = await api.post(
+        "/user/contact",
         contactData,
         {
           headers: {
@@ -67,7 +67,8 @@ export default function ContactPage() {
         }),
       });
 
-      toast.success(dbResponse.data.message || "Message sent successfully!");
+      // toast.success(dbResponse.data.message || "Message sent successfully!");
+      toast.success("Message sent successfully!");
       setContactData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error(error);

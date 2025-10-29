@@ -18,7 +18,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-bricolage mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold font-bricolage mb-6">
           Empowering Your Financial Growth
         </h1>
 
