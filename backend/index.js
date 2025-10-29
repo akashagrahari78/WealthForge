@@ -24,7 +24,7 @@ app.get('/',(req,res)=>{
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "https://wealth-forge-three.vercel.app" , 
+  origin: "https://pragyafinancialservices.vercel.app" , 
   credentials: true
 }));
 
