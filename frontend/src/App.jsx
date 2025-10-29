@@ -3,6 +3,7 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScroolToTop.jsx";
 import { Toaster } from "sonner";
+import { Analytics } from '@vercel/analytics/react';
 
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
