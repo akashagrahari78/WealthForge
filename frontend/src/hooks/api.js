@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create a base Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:3000/api" || "https://wealthforge-cpv5.onrender.com/api",
+  baseURL:  "https://wealthforge-cpv5.onrender.com/api",
   withCredentials: true, // use if you handle cookies or auth tokens
 });
 
