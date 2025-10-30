@@ -10,7 +10,7 @@ const HeroSection = () => {
       // style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Light overlay for readability */}
-      <div className="absolute inset-0 bg-white/80" />
+  {/* <div className="absolute inset-0 bg-white/80 z-10" /> */}
 
       <motion.div
         className="relative z-10 flex flex-col items-center justify-start h-[70vh] text-center text-black px-6 pt-20 md:pt-24 lg:pt-32"

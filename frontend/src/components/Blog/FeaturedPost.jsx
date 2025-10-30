@@ -13,8 +13,12 @@ const FeaturedPost = ({ post, t, lang }) => (
     <div>
       {post?.mainImage ? (
         <img
-          src={urlFor(post.mainImage).width(900).height(506).auto("format").url()}
-          alt={post.title?.[lang] || post.title?.en || ""}
+          src={urlFor(post.mainImage)
+            .width(900)
+            .height(506)
+            .auto("format")
+            .url()}
+          alt={post || ""}
           className="aspect-[16/9] w-full rounded-lg ring-1 ring-black/10 object-cover"
         />
       ) : (
@@ -23,17 +27,24 @@ const FeaturedPost = ({ post, t, lang }) => (
     </div>
     <div className="flex flex-col">
       <div className="text-xs uppercase tracking-wide text-black/60">
-        {(post.category?.[lang] || post.category?.en || "")} • {new Date(post.date).toLocaleDateString()}
+        {post.category?.[lang] || post.category?.en || ""} •{" "}
+        {new Date(post.date).toLocaleDateString()}
       </div>
-      <h2 className="mt-2 text-xl md:text-2xl font-semibold text-black">{post.title?.[lang] || post.title?.en || ""}</h2>
+      <h2 className="mt-2 text-xl md:text-2xl font-semibold text-black">
+        {post.title || ""}
+      </h2>
       <p className="mt-2 text-black/70">
-        {post.summary?.[lang] || post.summary?.en || post.excerpt || ""}
+        {post.excerpt || "No excerpt available."}
       </p>
       <div className="mt-4">
-        <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm text-black hover:underline underline-offset-4">
+        <Link
+          to={`/blog/${post.slug}`}
+          className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-black/80 hover:scale-[1.02] active:scale-[0.98]"
+        >
           {t.readMore} →
         </Link>
       </div>
+
       <div className="mt-auto pt-4 text-sm text-black/60">{t.byAkash}</div>
     </div>
   </article>

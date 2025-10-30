@@ -19,6 +19,9 @@ import Terms from "./pages/Terms.jsx";
 import ServiceDetail from "./pages/ServiceDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
+// page for test 
+import MutualFundsServicePage from "./pages/Test.jsx";
+
 //check for sanity
 // import Blog from './components/Blog.jsx'
 // import SinglePost from './components/SinglePost.jsx'
@@ -47,7 +50,9 @@ const App = () => {
         {/* for sanity.io check */}
         {/* <Route path="/blog" element = {<Blog/>} />
           <Route path="/blog/:slug" element = {<SinglePost/>} /> */}
+        <Route path = '/test' element = {<MutualFundsServicePage/>} />
         <Route path="*" element={<NotFound />} />
+        
       </Routes>
     </>
   );

@@ -72,7 +72,7 @@ const ServiceCard = ({
       <div className="mt-5">
         <Link
           to={`/services/${slug}`}
-          className="inline-flex items-center justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white ring-1 ring-black/10 transition-colors hover:bg-black/90"
+          className="inline-flex items-center justify-center rounded-xl bg-black px-4 py-2 text-sm font-medium text-white ring-1 ring-black/10 transition-colors hover:bg-black/90"
         >
           {ctaText}
         </Link>

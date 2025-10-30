@@ -66,7 +66,7 @@ const [openSet, setOpenSet] = React.useState(() => new Set());
           <Link
             to="/contact"
             className={[
-              "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium ring-1 transition",
+              "inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-medium ring-1 transition",
               inverted
                 ? "bg-white text-black ring-white/20 hover:bg-white/90"
                 : "bg-black text-white ring-black/10 hover:bg-black/90",

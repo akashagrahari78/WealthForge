@@ -5,6 +5,11 @@ import Counter from "./Counter";
 const StatsSection = () => {
   return (
 <section className="relative z-10 bg-white text-gray-800 py-16 mt-16 md:mt-24 lg:mt-32">
+  <div
+    className="pointer-events-none absolute inset-0 
+    bg-[linear-gradient(to_right,rgba(0,0,0,0.070)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.050)_1px,transparent_1px)]
+    bg-[size:28px_28px] [mask-image:radial-gradient(80%_80%_at_50%_30%,#000_75%,transparent_100%)]"
+  />
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
         <StatItem subtitle="Assets Under Management">
           <Counter to={50} prefix="₹" suffix=" Cr+" duration={1.4} />

@@ -2,16 +2,18 @@ import React from "react";
 import { Marquee } from "./Marquee.jsx";
 
 // Import your logos (adjust paths to match your assets)
-import services1 from "../assets/services1.svg";
-import services2 from "../assets/services2.svg";
-import services3 from "../assets/services3.svg";
-import services4 from "../assets/services4.svg";
+import NegenCapital from "../assets/ourPartners/NegenCapital.webp"
+import MotilalOswalWealthManagment from "../assets/ourPartners/MotilalOswalWealthManagment.webp"
+import NipponIndiaMutualFunds from "../assets/ourPartners/NipponIndiaMutualFunds.webp"
+import TataMutualFunds from "../assets/ourPartners/TataMutualFunds.webp"
+import IciciPrudentialMutualFunds from "../assets/ourPartners/IciciPrudentialMutualFunds.png"
 
 const logos = [
-  { name: "Business Today", src: services1 },
-  { name: "The Times of India", src: services2 },
-  { name: "Moneycontrol", src: services3 },
-  { name: "ET Now", src: services4 },
+  { name: "NegenCapital logo", src: NegenCapital },
+  { name: "MotilalOswalWealthManagment logo", src: MotilalOswalWealthManagment },
+  { name: "NipponIndiaMutualFunds logo", src: NipponIndiaMutualFunds },
+  { name: "TataMutualFunds logo", src: TataMutualFunds },
+  { name: "IciciPrudentialMutualFunds logo", src: IciciPrudentialMutualFunds },
 ];
 
 const LogoCard = ({ src, name }) => (
@@ -19,7 +21,7 @@ const LogoCard = ({ src, name }) => (
     <img
       src={src}
       alt={name}
-      className="h-full w-auto object-contain max-w-[140px] sm:max-w-[180px]"
+      className="h-full w-auto object-contain max-w-[200px] sm:max-w-[180px]"
     />
   </div>
 );
@@ -31,8 +33,8 @@ export default function TrustedLogos() {
         <p className="text-sm md:text-base uppercase tracking-[0.18em] text-black/70">
           Partnered with leading financial institutions
         </p>
-        <h2 className="mt-8 mb-14 text-3xl md:text-4xl font-medium text-black">
-          Distributing products from India's most trusted financial brands
+        <h2 className="mt-8 mb-14 text-3xl md:text-4xl font-medium font-merriweather text-black">
+          Enabling access to premier financial solutions{" "}
         </h2>
 
         <div className="relative flex w-full items-center justify-center overflow-hidden">

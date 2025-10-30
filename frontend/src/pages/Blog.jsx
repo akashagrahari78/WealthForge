@@ -13,7 +13,6 @@ import PostGrid from "../components/Blog/PostGrid.jsx";
 import CtaSection from "../components/Blog/CtaSection.jsx";
 import BlogSkeletonLoader from "../components/Blog/BlogSkeletonLoader.jsx";
 
-
 const t = {
   en: {
     headerTitle: "Insights & Articles",
@@ -39,7 +38,11 @@ const t = {
 
 const container = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, staggerChildren: 0.07 } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, staggerChildren: 0.07 },
+  },
 };
 
 const Blog = () => {
@@ -77,14 +80,29 @@ const Blog = () => {
       <Navbar />
       <main className="relative bg-white">
         {/* Header */}
-        <section className="relative mx-auto max-w-7xl w-[92%] md:w-[86%] pt-14 md:pt-20">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.18em] text-black/60">Blog</p>
-              <h1 className="mt-2 text-3xl md:text-4xl font-semibold text-black">{t[lang].headerTitle}</h1>
-              <p className="mt-3 text-sm md:text-base text-black/70 max-w-2xl">{t[lang].headerSub}</p>
+        <section className="relative mx-auto max-w-7xl w-[92%] md:w-[86%] pt-20 md:pt-28 pb-10 border-b border-black/10">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-black/50 font-medium">
+                Blog
+              </p>
+
+              <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-black tracking-tight">
+                {t[lang].headerTitle}
+              </h1>
+
+              <p className="mt-4 text-base md:text-lg text-black/70 max-w-2xl leading-relaxed">
+                {t[lang].headerSub}
+              </p>
+            </motion.div>
+
+            <div className="self-end md:self-auto">
+              <LanguageToggle lang={lang} setLang={setLang} />
             </div>
-            <LanguageToggle lang={lang} setLang={setLang} />
           </div>
         </section>
 
@@ -99,20 +117,21 @@ const Blog = () => {
           <div className="mb-4 text-sm text-black/60">{t[lang].featured}</div>
 
           {/* Skeleton loader while fetching */}
-{posts.length === 0 ? (
-  <BlogSkeletonLoader />
-) : (
-  <>
-    {/* Single featured post */}
-    {featured && <FeaturedPost post={featured} t={t[lang]} lang={lang} />}
+          {posts.length === 0 ? (
+            <BlogSkeletonLoader />
+          ) : (
+            <>
+              {/* Single featured post */}
+              {featured && (
+                <FeaturedPost post={featured} t={t[lang]} lang={lang} />
+              )}
 
-    {/* All posts grid */}
-    <div className="mt-12">
-      <PostGrid posts={rest} t={t[lang]} lang={lang} />
-    </div>
-  </>
-)}
-
+              {/* All posts grid */}
+              <div className="mt-12">
+                <PostGrid posts={rest} t={t[lang]} lang={lang} />
+              </div>
+            </>
+          )}
         </motion.div>
 
         {/* CTA */}

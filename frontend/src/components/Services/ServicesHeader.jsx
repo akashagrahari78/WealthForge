@@ -24,7 +24,7 @@ const ServicesHeader = () => (
     </div>
 
     {/* Headline */}
-    <h2 className="mt-3 text-3xl font-merriweather md:text-4xl lg:text-5xl font-normal leading-tight text-black">
+    <h2 className="mt-3 text-3xl  md:text-4xl lg:text-5xl font-merriweather leading-tight text-black">
       Services tailored to your goals
     </h2>
 
@@ -34,7 +34,7 @@ const ServicesHeader = () => (
     </p>
 
     {/* Accent bar */}
-    <div className="mt-5 h-1.5 w-24 md:w-28 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-transparent" />
+    {/* <div className="mt-5 h-1.5 w-24 md:w-28 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-300 to-transparent" /> */}
   </motion.header>
 );
 
