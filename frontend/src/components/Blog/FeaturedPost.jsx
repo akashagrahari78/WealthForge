@@ -28,14 +28,19 @@ const FeaturedPost = ({ post, t, lang }) => (
     <div className="flex flex-col">
       <div className="text-xs uppercase tracking-wide text-black/60">
         {post.category?.[lang] || post.category?.en || ""} •{" "}
-        {new Date(post.date).toLocaleDateString()}
+        {new Date(post.date).toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
       </div>
+
       <h2 className="mt-2 text-xl md:text-2xl font-semibold text-black">
         {post.title || ""}
       </h2>
-      <p className="mt-2 text-black/70">
+      {/* <p className="mt-2 text-black/70">
         {post.excerpt || "No excerpt available."}
-      </p>
+      </p> */}
       <div className="mt-4">
         <Link
           to={`/blog/${post.slug}`}

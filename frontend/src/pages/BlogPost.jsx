@@ -136,7 +136,7 @@ const BlogPost = () => {
                 .height(470)
                 .auto("format")
                 .url()}
-              alt={post.title  || ""}
+              alt={post.title || ""}
               className="w-full rounded-2xl ring-1 ring-black/10"
             />
           ) : (
@@ -173,7 +173,12 @@ const BlogPost = () => {
         >
           Published at:{" "}
           {post.publishedAt
-            ? new Date(post.publishedAt).toLocaleDateString()
+            ? new Date(post.publishedAt).toLocaleDateString("en-GB", {
+                weekday: "short",
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              })
             : "Not published yet"}
         </motion.p>
 

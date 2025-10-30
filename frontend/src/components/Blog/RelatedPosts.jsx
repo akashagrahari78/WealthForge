@@ -19,7 +19,11 @@ const RelatedPosts = ({ posts, t, lang }) => (
         >
           {p?.mainImage ? (
             <img
-              src={urlFor(p.mainImage).width(600).height(338).auto("format").url()}
+              src={urlFor(p.mainImage)
+                .width(600)
+                .height(338)
+                .auto("format")
+                .url()}
               alt={p.title?.[lang] || p.title?.en || ""}
               className="aspect-[16/9] w-full object-cover"
             />
@@ -28,10 +32,16 @@ const RelatedPosts = ({ posts, t, lang }) => (
           )}
           <div className="p-4">
             <div className="text-[11px] uppercase tracking-wide text-black/60">
-              {(p.category?.[lang] || p.category?.en || "")} • {new Date(p.date).toLocaleDateString()}
+              {p.category?.[lang] || p.category?.en || ""} •{" "}
+              {new Date(p.publishedAt).toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
             </div>
+
             <div className="mt-1.5 text-sm font-semibold text-black line-clamp-2">
-  {p?.title?.[lang] ?? p?.title?.en ?? ""}
+              {p?.title?.[lang] ?? p?.title?.en ?? ""}
             </div>
           </div>
         </Link>
