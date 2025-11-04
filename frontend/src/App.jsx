@@ -12,7 +12,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import ContactPage from "./pages/Contact";
+import ContactPage from "./pages/Contact.jsx";
 import Book from "./pages/Book.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
@@ -20,7 +20,7 @@ import ServiceDetail from "./pages/ServiceDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 // page for test 
-import MutualFundsServicePage from "./pages/Test.jsx";
+import MutualFundAdvisory from "./pages/Test.jsx";
 
 //check for sanity
 // import Blog from './components/Blog.jsx'
@@ -50,7 +50,7 @@ const App = () => {
         {/* for sanity.io check */}
         {/* <Route path="/blog" element = {<Blog/>} />
           <Route path="/blog/:slug" element = {<SinglePost/>} /> */}
-        <Route path = '/test' element = {<MutualFundsServicePage/>} />
+        <Route path = '/test' element = {<MutualFundAdvisory/>} />
         <Route path="*" element={<NotFound />} />
         
       </Routes>
