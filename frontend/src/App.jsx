@@ -16,7 +16,8 @@ import ContactPage from "./pages/Contact.jsx";
 import Book from "./pages/Book.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
-import ServiceDetail from "./pages/ServiceDetail.jsx";
+// import ServiceDetail from "./pages/ServiceDetail.jsx";
+import ServicePage from "./pages/ServicePage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 // page for test 
@@ -37,7 +38,8 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services/:servicename" element={<ServiceDetail />} />
+        {/* <Route path="/services/:servicename" element={<ServiceDetail />} /> */}
+        <Route path="/services/:slug" element={<ServicePage />} />
 
         <Route path="/book" element={<Book />} />
         <Route path="/privacy" element={<Privacy />} />
