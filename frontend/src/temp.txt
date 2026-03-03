@@ -68,4 +68,3 @@ More Todos :
 -> Add planning tools(retirmiment, sip, luumpus, planners, calculators)
 -> Newsletter
 -> smart goal planners
- 

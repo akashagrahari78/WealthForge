@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { services } from '../components/Services/services.data.js'; // Your single source of truth
 import Navbar from '../components/Hero/Navbar.jsx';
 import NotFound from './NotFound.jsx';
+import FlippableCardGrid from '../components/FlippableCardGrid.jsx';
+import Footer from '../components/Footer/Footer.jsx';
+// import ServiceChart from '../components/ServiceChart.jsx';
 
 export default function ServicePage() {
   const { slug } = useParams();
@@ -29,11 +32,15 @@ export default function ServicePage() {
       >
         <div className="md:w-1/2">
           <p className="inline-block text-xs font-semibold rounded-full px-3 py-1 bg-gray-200 text-gray-700 mb-2">{data.badge}</p>
-          <h1 className="text-5xl font-bold leading-tight mb-4">{data.title}</h1>
+          <h1 className="text-5xl font-bricolage font-bold leading-tight mb-4">{data.title}</h1>
           <p className="text-lg text-gray-700 mb-6">{data.outcome}</p>
           <div className="flex gap-4">
-            <button className="bg-black text-white py-2 px-6 rounded-full font-medium hover:bg-gray-900 transition">{data.ctaText}</button>
-            <button className="border border-black text-black py-2 px-6 rounded-full font-medium hover:bg-gray-100 transition">Ask a question</button>
+            {/* <button className="bg-black text-white py-2 px-6 rounded-full font-medium hover:bg-gray-900 transition">{data.ctaText}</button> */}
+            <Link to="/contact">
+              <button className="border border-black text-black py-2 px-6 rounded-full font-medium hover:bg-gray-100 transition">
+                Ask a question
+              </button>
+            </Link>
           </div>
         </div>
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
@@ -66,23 +73,13 @@ export default function ServicePage() {
           </ul>
         </div>
       </section>
+      
+     {/* <ServiceChart chartData={data.chartData} /> */}
 
       {/* 3. Types Section */}
-      <section className="max-w-5xl mx-auto px-6 md:px-0 py-14">
+       <section className="py-14">
         <h2 className="text-3xl font-bold mb-10 text-center">Types of {data.title}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {data.types.map(({ title, desc }) => (
-            <motion.div
-              key={title}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white border border-gray-200 rounded-lg p-5 text-center cursor-pointer hover:shadow-md transition-shadow"
-            >
-              <BookOpen size={24} className="mx-auto mb-3 text-black opacity-70" />
-              <h3 className="font-semibold text-lg mb-1">{title}</h3>
-              <p className="text-gray-700 text-sm">{desc}</p>
-            </motion.div>
-          ))}
-        </div>
+        <FlippableCardGrid cardData={data.types} />
       </section>
 
       {/* 4. Goals Section */}
@@ -132,6 +129,7 @@ export default function ServicePage() {
         </div>
       </section>
     </div>
+    <Footer/>
     </>
   );
 }
