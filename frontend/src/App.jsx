@@ -1,0 +1,66 @@
+import React from "react";
+import "./index.css";
+import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScroolToTop.jsx";
+import { Toaster } from "sonner";
+import { Analytics } from '@vercel/analytics/react';
+
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import ContactPage from "./pages/Contact.jsx";
+import Book from "./pages/Book.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
+// import ServiceDetail from "./pages/ServiceDetail.jsx";
+import ServicePage from "./pages/ServicePage.jsx";
+import Calculators from "./pages/Calculators.jsx";
+import NotFound from "./pages/NotFound.jsx";
+
+// page for test 
+import MutualFundAdvisory from "./pages/Test.jsx";
+
+//check for sanity
+// import Blog from './components/Blog.jsx'
+// import SinglePost from './components/SinglePost.jsx'
+const App = () => {
+  return (
+    <>
+      <ScrollToTop />
+      <Toaster position="top-right" theme="dark" richColors />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/services" element={<Services />} />
+        {/* <Route path="/services/:servicename" element={<ServiceDetail />} /> */}
+        <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/calculators" element={<Calculators />} />
+
+        <Route path="/book" element={<Book />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+
+        {/* this is working  */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+
+        {/* for sanity.io check */}
+        {/* <Route path="/blog" element = {<Blog/>} />
+          <Route path="/blog/:slug" element = {<SinglePost/>} /> */}
+        <Route path='/test' element={<MutualFundAdvisory />} />
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
+      <Analytics />
+    </>
+  );
+};
+
+export default App;
