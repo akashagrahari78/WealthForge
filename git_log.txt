@@ -1,0 +1,3 @@
+7c1cad6  feat: update services,fix CORS,improve card animations
+origin	https://github.com/akashagrahari78/WealthForge.git (fetch)
+origin	https://github.com/akashagrahari78/WealthForge.git (push)
