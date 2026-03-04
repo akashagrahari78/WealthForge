@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "sonner";
-import { Link } from "react-router-dom";  
+import { Link } from "react-router-dom";
 import api from "../hooks/api.js";
 import ContactHeader from "../components/Contact/ContactHeader.jsx";
 import ContactFormCard from "../components/Contact/ContactFormCard.jsx";
 import ContactInfoCard from "../components/Contact/ContactInfoCard.jsx";
 import BookCallHeader from "../components/Contact/BookCallHeader.jsx";
- import BookCallTipsCard from "../components/Contact/BookCallTipsCard.jsx";
+import BookCallTipsCard from "../components/Contact/BookCallTipsCard.jsx";
 import Navbar from "../components/Hero/Navbar.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 
@@ -26,55 +26,35 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
-  });
-
-  // --- BOOKING STATE AND HANDLERS REMOVED ---
+  }); const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onChangeContact = (e) => {
     const { name, value } = e.target;
     setContactData((d) => ({ ...d, [name]: value }));
   };
 
-  // --- onChangeBooking REMOVED ---
-
   const submitContact = async (e) => {
     e.preventDefault();
-    try {
-      // 1️⃣ Save to your backend database
-      const dbResponse = await api.post(
-        "/user/contact",
-        contactData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    setIsSubmitting(true);
 
-      // console.log(dbResponse);
-      // // 2 Also save to Google Sheets via NoCodeAPI
-      // await fetch("https://sheetdb.io/api/v1/9qi165ws9my8e", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     data: [
-      //       {
-      //         name: contactData.name,
-      //         Email: contactData.email,
-      //         phone: `'${contactData.phone}`, // single quote forces text
-      //         message: contactData.message,
-      //       },
-      //     ],
-      //   }),
-      // });
+    const requestPromise = api.post(
+      "/user/contact",
+      contactData,
+      { headers: { "Content-Type": "application/json" } }
+    );
 
-      // toast.success(dbResponse.data.message || "Message sent successfully!");
-      toast.success("Message sent successfully!");
-      setContactData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error(error);
-      toast.error(error.response?.data?.message || "Something went wrong!");
-    }
+    toast.promise(requestPromise, {
+      loading: "Sending your message...",
+      success: () => {
+        setContactData({ name: "", email: "", phone: "", message: "" });
+        setIsSubmitting(false);
+        return "Message sent successfully!";
+      },
+      error: (error) => {
+        setIsSubmitting(false);
+        return error.response?.data?.message || "Something went wrong!";
+      },
+    });
   };
 
   // --- submitBooking REMOVED ---
@@ -99,6 +79,7 @@ export default function ContactPage() {
               data={contactData}
               onChange={onChangeContact}
               onSubmit={submitContact}
+              isSubmitting={isSubmitting}
             />
 
             <ContactInfoCard variants={fadeUp} />
@@ -117,10 +98,10 @@ export default function ContactPage() {
             >
               <BookCallHeader variants={fadeUp} />
 
- 
+
               <motion.div
                 variants={fadeUp}
-                 className="lg:col-span-3 bg-white p-8 rounded-lg shadow-lg flex flex-col items-start justify-center h-full"
+                className="lg:col-span-3 bg-white p-8 rounded-lg shadow-lg flex flex-col items-start justify-center h-full"
               >
                 <h3 className="text-2xl font-semibold mb-4 text-black">
                   Ready to Talk?
@@ -138,7 +119,7 @@ export default function ContactPage() {
                   Schedule Your Free Call
                 </Link>
               </motion.div>
-            
+
 
               <BookCallTipsCard variants={fadeUp} />
             </motion.div>
