@@ -51,7 +51,7 @@ export default function ContactPage() {
         }
       );
 
-      console.log(dbResponse);
+      // console.log(dbResponse);
       // // 2 Also save to Google Sheets via NoCodeAPI
       // await fetch("https://sheetdb.io/api/v1/9qi165ws9my8e", {
       //   method: "POST",

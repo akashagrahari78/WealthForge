@@ -2,9 +2,10 @@ import axios from "axios";
 
 // Create a base Axios instance
 const api = axios.create({
+  // Use localhost in dev, but use your securely hidden .env URL in production!
   baseURL: import.meta.env.MODE === "development"
     ? "http://localhost:3000/api"
-    : "https://wealthforge-cpv5.onrender.com/api",
+    : import.meta.env.VITE_API_URL || "https://wealthforge-cpv5.onrender.com/api",
   withCredentials: true, // use if you handle cookies or auth tokens
 });
 
