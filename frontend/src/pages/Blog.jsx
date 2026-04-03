@@ -87,8 +87,8 @@ const Blog = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-black/50 font-bricolage font-medium">
-                Blog
+              <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-black/50 font-medium">
+                PragyaFinancialServices Blog
               </p>
 
               <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-black font-bricolage tracking-tight">

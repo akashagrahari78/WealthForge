@@ -50,7 +50,7 @@ const PostGrid = ({ posts, t, lang }) => (
 
           {/* Title */}
           <h3 className="mt-2 text-lg md:text-xl font-semibold text-black leading-snug group-hover:text-black/80 transition-colors">
-            {p.title  || ""}
+            {p.title || ""}
           </h3>
 
           {/* Excerpt / Summary */}
